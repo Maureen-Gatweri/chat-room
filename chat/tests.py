@@ -11,11 +11,10 @@ class ChatAppTests(TestCase):
         self.user = User.objects.create_user(username='testuser', password='testpass')
         self.client = APIClient()
         self.client.login(username='testuser', password='testpass') 
-
         self.chat_room = ChatRoom.objects.create(name='test_room')
         self.invitation_url = reverse('send_invitation')
-        self.chat_message_url = reverse('chat_message_list_create')  
-        self.leave_chat_room_url = reverse('leave_chat_room')
+        self.chat_message_url = reverse('chat_message_list_create')
+        self.leave_chat_room_url = reverse('leave_chatroom')
         self.media_upload_url = reverse('media_upload')
         self.notifications_url = reverse('notifications')
 
